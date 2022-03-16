@@ -1,0 +1,13 @@
+<turbo-frame id="cities_list">
+{% if cities.size > 0 %}
+<div class="panel" *ngIf="cities$ | async as cities; else loading">
+    {% for city in cities %}
+    <a class="panel-block p-4" href="/city/{{city.name}}" data-turbo-frame="_top">
+        <img src="https://ssl.gstatic.com/onebox/weather/48/{{city.weather.weather}}.png"
+             alt="{{city.weather.weather}}" class="mr-4">
+        <h2 class="subtitle"><span>{{ city.name }}</span></h2>
+    </a>
+    {% endfor %}
+</div>
+{% endif %}
+</turbo-frame>

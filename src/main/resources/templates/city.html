@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>GrenobleHandsOn</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href="/css/vendor.css" rel="stylesheet">
+</head>
+<body>
+
+{% include "shared/navbar" %}
+
+<section class="section">
+    <div class="container">
+        <div class="columns">
+            <div class="column">
+                <article class="panel is-primary">
+                    <h2 class="panel-heading">{{city.name}}</h2>
+<!--                    <div class="panel-block">-->
+<!--                        <app-l-map zoom="13" *ngIf="cityCoords$ | async as coords" [lat]="coords.latitude"-->
+<!--                                   [long]="coords.longitude"></app-l-map>-->
+<!--                    </div>-->
+
+                    <turbo-frame id="city_weather_controls">
+                        {% include "frames/city-weather-controls" %}
+                    </turbo-frame>
+
+                    <turbo-frame id="city_weather" src="/frames/city/{{city.name}}/weather-daily">
+                        <div class="panel-block">Loading...</div>
+                    </turbo-frame>
+
+                    <div class="panel-block">
+                        <a href="/" class="button is-rounded">
+                            Go back home
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include "shared/footer" %}
+
+<script type="module" src="/js/index.js" async defer></script>
+
+</body>
+</html>
+

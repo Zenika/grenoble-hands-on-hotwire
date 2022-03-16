@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>GrenobleHandsOn</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href="/css/vendor.css" rel="stylesheet">
+</head>
+<body>
+
+{% include "shared/navbar" %}
+
+<section class="section">
+    <div class="container">
+        <div class="columns">
+            <div class="column is-one-third">
+                <h1 class="title">Agences Z</h1>
+                <turbo-frame id="cities_list" src="/frames/cities">
+                    <div class="panel-block">Loading...</div>
+                </turbo-frame>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include "shared/footer" %}
+
+<script type="module" src="/js/index.js" async defer></script>
+
+</body>
+</html>
+

@@ -1,0 +1,25 @@
+<turbo-frame id="city_weather">
+<div class="panel-block">
+    <table class="table is-fullwidth">
+        <tr>
+            <th>Weather</th>
+            <th>Date</th>
+            <th>Max</th>
+            <th>Min</th>
+            <th style="width: 50%"></th>
+        </tr>
+        {% for weather in weathers %}
+        <tr>
+            <td>
+                <img src="https://ssl.gstatic.com/onebox/weather/48/{{weather.weather}}.png" width="48"
+                     alt="{{weather.weather}}">
+            </td>
+            <td>{{weather.day}}</td>
+            <td>{{weather.temperatureMax}}</td>
+            <td>{{weather.temperatureMin}}</td>
+            <td></td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+</turbo-frame>
