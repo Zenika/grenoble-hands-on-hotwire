@@ -1,25 +1,27 @@
-<div class="panel-block">
+<div class="panel-block" data-controller="weather-controls">
     <div class="columns">
         <div class="column">
-            <div class="field has-addons">
+            <div class="field has-addons" id="degree-controls">
                 <p class="control">
-                    <button class="control button" [class.is-info]="degree === 'C'" (click)="degree = 'C'">C°</button>
+                    <a class="button is-info" data-action="click->weather-controls#setDegreeButtonActive">C°</a>
                 </p>
                 <p class="control">
-                    <button class="control button" [class.is-info]="degree === 'F'" (click)="degree = 'F'">F°</button>
+                    <a class="button" data-action="click->weather-controls#setDegreeButtonActive">F°</a>
                 </p>
             </div>
         </div>
         <div class="column">
-            <div class="field has-addons">
+            <div class="field has-addons" id="mode-controls">
                 <p class="control">
                     <a class="button {{mode == 'simple' ? 'is-info' : ''}}"
+                       data-action="click->weather-controls#setModeButtonActive"
                        href="/frames/city/{{city.name}}/weather-daily" data-turbo-frame="city_weather">
                         Simple
                     </a>
                 </p>
                 <p class="control">
                     <a class="button {{mode == 'detailed' ? 'is-info' : ''}}"
+                       data-action="click->weather-controls#setModeButtonActive"
                        href="/frames/city/{{city.name}}/weather-hourly" data-turbo-frame="city_weather">
                         Detailed
                     </a>
