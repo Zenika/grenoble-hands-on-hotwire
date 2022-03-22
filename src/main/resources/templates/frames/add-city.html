@@ -1,0 +1,38 @@
+<form class="card-content" role="form" action="/frames/city/add" method="post" data-turbo-frame="add-city">
+    <div class="field city-name">
+        <label for="city-name-input" class="label">Name</label>
+        <div class="control">
+            <input id="city-name-input" class="input" type="text" name="name" placeholder="City name" required>
+        </div>
+        {% if cityNameError is not null %}
+        <p class="help is-danger" aria-label="city name error">
+            {{ cityNameError }}
+        </p>
+        {% endif %}
+    </div>
+    <div class="field latitude">
+        <label for="latitude-input" class="label">Latitude</label>
+        <div class="control">
+            <input id="latitude-input" class="input" type="number" name="latitude" placeholder="Latitude" required>
+        </div>
+        {% if latitudeError is not null %}
+        <p class="help is-danger" aria-label="latitude error">
+            {{ latitudeError }}
+        </p>
+        {% endif %}
+    </div>
+    <div class="field longitude">
+        <label for="longitude-input" class="label">Longitude</label>
+        <div class="control">
+            <input id="longitude-input" class="input" type="number" name="longitude" placeholder="Longitude" required>
+        </div>
+        {% if longitudeError is not null %}
+        <p class="help is-danger" aria-label="longitude error">
+            {{ longitudeError }}
+        </p>
+        {% endif %}
+    </div>
+    <div class="control">
+        <button type="submit" class="button is-primary">Create</button>
+    </div>
+</form>

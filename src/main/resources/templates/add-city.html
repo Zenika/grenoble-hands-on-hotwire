@@ -1,6 +1,8 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="utf-8">
-    <title>Zenika weather</title>
+    <title>Add city</title>
     <base href="/">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -12,13 +14,12 @@
 
 <section class="section">
     <div class="container">
-        <div class="columns">
-            <div class="column is-one-third">
-                <h1 class="title">Agences Z</h1>
-                <turbo-frame id="cities_list" src="/frames/cities">
-                    <div class="panel-block">Loading...</div>
-                </turbo-frame>
-            </div>
+        <h1 class="title">Create city</h1>
+
+        <div class="card">
+            <turbo-frame id="add-city">
+                {% include "frames/add-city" %}
+            </turbo-frame>
         </div>
     </div>
 </section>
@@ -27,4 +28,6 @@
 
 <script type="module" src="/js/index.js" async="" defer=""></script>
 
-</body></html>
+
+</body>
+</html>

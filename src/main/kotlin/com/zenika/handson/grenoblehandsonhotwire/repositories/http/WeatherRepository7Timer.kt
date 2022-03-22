@@ -32,5 +32,5 @@ class WeatherRepository7Timer(
     }
 
     private fun getResponse(city: City, product: String) =
-            restTemplate.getForObject<String>("$weatherUrl/$product.php?lon=${city.position.longitude}&lat=${city.position.latitude}&ac=0&unit=metric&output=json&tzshift=0")
+            restTemplate.getForObject<String>("$weatherUrl/$product.php?lon=${city.position?.longitude}&lat=${city.position?.latitude}&ac=0&unit=metric&output=json&tzshift=0")
 }
